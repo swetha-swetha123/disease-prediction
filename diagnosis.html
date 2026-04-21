@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnosis & Treatment</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #74ebd5, #ACB6E5); margin: 0; padding: 0; }
+    .container {
+      width: 60%; margin: 50px auto; background: #fff;
+      border-radius: 12px; padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    h1 { text-align: center; color: #333; }
+    select {
+      display: block; width: 100%; padding: 10px;
+      margin: 15px 0; border-radius: 5px; border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .get-advice-btn {
+      display: block; width: 100%; margin-top: 15px;
+      background: #2196F3; color: white; border: none;
+      padding: 12px; border-radius: 5px; font-size: 16px;
+      cursor: pointer;
+    }
+    .get-advice-btn:hover { background: #1976D2; }
+    .btn {
+      display: inline-block; margin: 10px; padding: 10px 15px;
+      background: #2196F3; color: white; text-decoration: none; border-radius: 5px;
+    }
+    .btn:hover { background: #1976D2; }
+    .advice-box { margin-top: 20px; }
+    .card {
+      padding: 15px; border-radius: 8px; margin: 10px 0;
+      color: white; font-size: 15px;
+    }
+    .card.lifestyle { background: #2ecc71; } /* Green */
+    .card.medical { background: #e74c3c; }   /* Red */
+    .card.support { background: #3498db; }   /* Blue */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Diagnosis</h1>
+
+    <form method="POST" action="/diagnosis">
+      <label for="disease">Select Disease:</label>
+      <select id="disease" name="disease" required>
+        <option value="">-- Choose a disease --</option>
+        {% for d in diseases %}
+          <option value="{{ d }}">{{ d }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="btn">Get Advice</button>
+    </form>
+
+    <!-- Advice display -->
+    {% if disease %}
+      <div class="advice-box">
+        <h2>Disease: {{ disease }}</h2>
+        <h3>Advice:</h3>
+
+        <!-- Lifestyle, Medical, Supportive Care cards -->
+        <div class="card lifestyle">🏃 Lifestyle: {{ advice[0] }}</div>
+        <div class="card medical">💊 Medical: {{ advice[1] }}</div>
+        <div class="card support">🫁 Supportive Care: {{ advice[2] }}</div>
+      </div>
+    {% endif %}
+
+    <!-- Navigation -->
+    <a href="/" class="btn">Back to Dashboard</a>
+    <a href="/hospitals" class="btn">Go to hospitals</a>
+  </div>
+</body>
+</html>
