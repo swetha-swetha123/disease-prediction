@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospitals</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4f8; margin: 0; padding: 0; }
+    .container { width: 70%; margin: 40px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #333; }
+    .hospital-card {
+      background: #fafafa; border: 1px solid #ddd; border-radius: 8px;
+      padding: 15px; margin: 15px 0;
+    }
+    .hospital-card h3 { margin: 0; color: #2196F3; }
+    .hospital-card p { margin: 5px 0; }
+    .btn {
+      display: inline-block; margin-top: 20px; padding: 10px 15px;
+      background: #2196F3; color: white; text-decoration: none; border-radius: 5px;
+    }
+    .btn:hover { background: #1976D2; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hospitals & Emergency Care</h1>
+
+    {% for hospital in hospitals %}
+  <div class="hospital-card">
+    <h3>
+      <a href="https://www.google.com/maps/dir/?api=1&destination={{ hospital.name | replace(' ', '+') }}+{{ hospital.location | replace(' ', '+') }}" target="_blank">
+        {{ hospital.name }}
+      </a>
+    </h3>
+    <p>📍 {{ hospital.location }}</p>
+    <p>☎ <a href="tel:{{ hospital.phone }}">{{ hospital.phone }}</a></p>
+    <p>🕒 {{ hospital.services }}</p>
+  </div>
+{% endfor %}
+
+    <a href="/" class="btn">Back to Dashboard</a>
+    <a href="/comments" class="btn">Go to Comments</a>
+  </div>
+</body>
+</html>
