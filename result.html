@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4f8; }
+    .container {
+      max-width: 600px; margin: 50px auto; background: #fff;
+      padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .btn {
+      display: inline-block; margin-top: 20px; padding: 10px 15px;
+      background: #2196F3; color: white; text-decoration: none; border-radius: 5px;
+    }
+    .btn:hover { background: #1976D2; }
+    .diagnosis-btn {
+      background: #4CAF50;
+    }
+    .diagnosis-btn:hover {
+      background: #388E3C;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Prediction Result</h2>
+    <p><strong>{{ prediction }}</strong></p>
+    <p>Based on symptoms: {{ symptoms|join(', ') }}</p>
+
+    <!-- Navigation buttons -->
+    <a href="/" class="btn">← Back to Dashboard</a>
+    <a href="/diagnosis" class="btn diagnosis-btn">Go to Diagnosis</a>
+  </div>
+</body>
+</html>
