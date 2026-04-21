@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnosis Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 70%;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2196F3;
+    }
+    .disease {
+      font-size: 20px;
+      font-weight: bold;
+      color: #E91E63; /* pink highlight for disease name */
+    }
+    .advice {
+      background: #E3F2FD; /* light blue background */
+      border-left: 5px solid #2196F3;
+      padding: 15px;
+      margin-top: 15px;
+      font-size: 16px;
+      color: #333;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #2196F3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background: #1976D2;
+    }
+  </style>
+</head>
+<body>
+   <div class="container">
+    <h1>Diagnosis Result</h1>
+    <p>You selected: <strong>{{ disease }}</strong></p>
+    <div class="advice">{{ advice }}</div>
+
+    <!-- Navigation -->
+    <a href="/diagnosis" class="btn">Back to Diagnosis</a>
+    <a href="/hospitals" class="btn">Go to Hospitals</a>
+  </div>
+</body>
+</html>
