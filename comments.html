@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Comments</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4f8; margin: 0; padding: 0; }
+    .container { width: 70%; margin: 40px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #333; }
+    form { margin-top: 20px; }
+    textarea {
+      width: 100%; height: 120px; padding: 10px;
+      border-radius: 5px; border: 1px solid #ccc; font-size: 14px;
+    }
+    .btn {
+      display: inline-block; margin-top: 15px; padding: 10px 15px;
+      background: #2196F3; color: white; text-decoration: none; border-radius: 5px;
+      border: none; cursor: pointer;
+    }
+    .btn:hover { background: #1976D2; }
+    .comment-box {
+      background: #fafafa; border: 1px solid #ddd; border-radius: 8px;
+      padding: 10px; margin: 10px 0;
+    }
+    .timestamp {
+      font-size: 12px; color: #666; margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Comments</h1>
+
+    <!-- Comment form -->
+    <form method="POST" action="/comments">
+      <label for="comment">Leave your feedback:</label>
+      <textarea id="comment" name="comment" placeholder="Write your comment here..."></textarea>
+      <button type="submit" class="btn">Submit Comment</button>
+    </form>
+
+    <!-- Display saved comments -->
+    {% for comment in comments %}
+      <div class="comment-box">
+        {{ comment.text }}
+        <div class="timestamp">Posted on {{ comment.time }}</div>
+      </div>
+    {% endfor %}
+
+    <!-- Navigation -->
+    <a href="/" class="btn">Back to Dashboard</a>
+    <a href="/hospitals" class="btn">Go to Hospitals</a>
+  </div>
+</body>
+</html>
