@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Symptoms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .symptom {
+      margin: 10px 0;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background: #45a049;
+    }
+    .dashboard-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      background: #2196F3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .dashboard-btn:hover {
+      background: #1976D2;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Disease Prediction System</h1>
+  </div>
+
+  <div class="container">
+    <a href="/" class="dashboard-btn">← Back to Dashboard</a>
+    <h2>Select Symptoms</h2>
+    <form method="POST">
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Chest Pain"> Chest Pain</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Shortness of Breath"> Shortness of Breath</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Fatigue"> Fatigue</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Frequent Urination"> Frequent Urination</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Chronic Cough"> Chronic Cough</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Weight Loss"> Weight Loss</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Fever"> Fever</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Headache"> Headache</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Nausea"> Nausea</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Dizziness"> Dizziness</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Joint Pain"> Joint Pain</div>
+      <div class="symptom"><input type="checkbox" name="symptoms" value="Skin Rash"> Skin Rash</div>
+
+      <button type="submit" class="btn">Predict</button>
+    </form>
+  </div>
+</body>
+</html>
